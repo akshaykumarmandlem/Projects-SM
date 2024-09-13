@@ -1,0 +1,4 @@
+Some of the dependenices are automatically installed if not installed, you can install it manually.
+Please change the public key, your desired key
+Creates one instance with 8gigs in Size
+It creates S3 bucket, KMS key, SSM keys, Ec-2 Role, security groups and an instance.
