@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kubernetes Threat Detection">
+    <title>K8s Threat Detection Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kubernetes Threat Detection</h1>
+            <p>Monitor threats in your K8s clusters in real time.</p>
+        </header>
+
+        <main>
+            <table class="threat-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Type of Threat</th>
+                        <th>Severity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for threat in threats %}
+                    <tr>
+                        <td>{{ threat.id }}</td>
+                        <td>{{ threat.type }}</td>
+                        <td class="severity {{ threat.severity|lower }}">{{ threat.severity }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Kubernetes Threat Detection. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

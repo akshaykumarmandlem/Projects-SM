@@ -6,3 +6,6 @@ output "userdata" {
   value = (aws_instance.my_instance.user_data)
   sensitive = true
 }
+output "configuration_status" {
+  value = "Configuration Launched"
+}
